@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100..900;1,100..900&family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Lora", serif;
+  --font-sans: "Inter", sans-serif;
+
+  --color-brand-brown: #6B3F2A;
+  --color-brand-caramel: #C8956C;
+  --color-brand-cream: #FAF6F1;
+  --color-brand-beige: #E8D5C4;
+  --color-brand-ink: #2C1810;
+  --color-brand-muted: #8B6355;
+}
+
+@layer base {
+  body {
+    @apply bg-brand-cream text-brand-ink font-sans;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-brand-beige;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-brand-caramel rounded-full;
+}
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-brand-brown;
+}
+
+/* PayOS Embedded Iframe styling - Clip the top header tabs */
+#payos-checkout-container {
+  position: relative;
+  overflow: hidden;
+}
+#payos-checkout-container iframe {
+  border: none !important;
+  width: 100% !important;
+  height: calc(100% + 90px) !important;
+  margin-top: -90px !important;
+  border-radius: inherit !important;
+}
+
